@@ -3,9 +3,9 @@
   <remote name="openembedded" fetch="git://github.com/openembedded/" />
   <remote name="riscv" fetch="git://github.com/riscv/" />
   <remote name="yocto" fetch="git://git.yoctoproject.org/" />
-  <remote name="meta-polarfire-soc-yocto-bsp" fetch="https://github.com/polarfire-soc/" />
+  <remote name="meta-polarfire-soc-yocto-bsp" fetch="https://github.com/ARIES-Embedded/" />
   <default remote="openembedded" revision="master" />
-  <project name="meta-polarfire-soc-yocto-bsp" remote="meta-polarfire-soc-yocto-bsp" path="meta-polarfire-soc-yocto-bsp" revision="master" />
+  <project name="meta-polarfire-soc-yocto-bsp" remote="meta-polarfire-soc-yocto-bsp" path="meta-polarfire-soc-yocto-bsp" revision="aries" />
   <project name="meta-riscv" remote="riscv" path="meta-riscv" revision="94ec885cec6f15bab5bc3bc617b8250b9aaf1b45" />
   <project name="openembedded-core" remote="openembedded" path="openembedded-core" revision="ea6f27e35b6cac4db9e1ab0d9a888d15daba6c09" />
   <project name="bitbake" remote="openembedded" path="openembedded-core/bitbake" revision="efd026c26a377b826a49b945a8212bf7de8a480a" />

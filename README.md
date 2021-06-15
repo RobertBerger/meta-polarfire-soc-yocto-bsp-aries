@@ -12,6 +12,7 @@ Using Yocto 'Openembedded' you will build the following:
 The complete User Guides for each development platform, containing board and boot instructions, are available for the following supported platforms:
 
   - [ICICLE-KIT-ES](https://github.com/polarfire-soc/polarfire-soc-documentation/blob/master/boards/mpfs-icicle-kit-es/icicle-kit-sw-developer-guide/icicle-kit-sw-developer-guide.md) (Icicle Kit Engineering Sample) (Requires minimum Design Tag 2020.11 )
+  - [M100PFSEVP](https://www.aries-embedded.com/evaluation-kit/fpga/polarfire-microchip-soc-fpga-m100pfsevp-riscv-hsmc-pmod) (Aries Embedded M100PFSEVP PolarFire SoC-FPGA Evaluation Platform)
   - [MPFS-DEV-KIT](https://github.com/polarfire-soc/polarfire-soc-documentation/blob/master/boards/mpfs-dev-kit/MPFS-DEV-KIT_user_guide.md) (HiFive Unleashed Expansion Board)
   - [LC-MPFS-DEV-KIT](https://github.com/polarfire-soc/polarfire-soc-documentation/blob/master/boards/lc-mpfs-dev-kit/LC-MPFS-DEV-KIT_user_guide.md)
 
@@ -25,6 +26,12 @@ This needs to be done every time you want a clean setup based on the latest BSP.
 mkdir yocto-dev && cd yocto-dev
 repo init -u https://github.com/polarfire-soc/meta-polarfire-soc-yocto-bsp.git -b master -m tools/manifests/riscv-yocto.xml
 ```
+For the Aries Embedded M100PFSEVP, please use:
+```bash
+mkdir yocto-dev && cd yocto-dev
+repo init -u https://github.com/ARIES-Embedded/meta-polarfire-soc-yocto-bsp.git -b aries -m tools/manifests/riscv-yocto.xml
+```
+
 ### Update the repo workspace
 ```bash
 repo sync
@@ -55,6 +62,7 @@ The following table details the available targets:
 | `MACHINE`                  | Board Name                                                            |
 | -------------------------- | --------------------------------------------------------------------- |
 | `MACHINE=icicle-kit-es`    | ICICLE-KIT-ES, Icicle Kit engineering samples                         |
+| `MACHINE=m100pfsevp`       | M100PFSEVP, Aries M100PFSEVP PolarFire SoC-FPGA Evaluation Platform   |
 | `MACHINE=mpfs`             | MPFS-DEV-KIT, HiFive Unleashed Expansion Board                        |
 | `MACHINE=lc-mpfs`          | LC-MPFS-DEV-KIT, Low cost HiFive Unleashed Expansion Board            |
 | `MACHINE=qemuriscv64`      | Simulation                                                            |

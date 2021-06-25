@@ -1,0 +1,26 @@
+From 799b8ad21ef099994e18b7fa68ed97cbbad0c5db Mon Sep 17 00:00:00 2001
+From: Robert Berger <Robert.Berger@ReliableEmbeddedSystems.com>
+Date: Thu, 24 Jun 2021 23:01:05 +0000
+Subject: [PATCH] adjust for new fdt name @ -> -
+
+Signed-off-by: Robert Berger <Robert.Berger@ReliableEmbeddedSystems.com>
+---
+ include/configs/m100pfsevp.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/include/configs/m100pfsevp.h b/include/configs/m100pfsevp.h
+index 6736de9a4c..5bc99edc63 100644
+--- a/include/configs/m100pfsevp.h
++++ b/include/configs/m100pfsevp.h
+@@ -41,7 +41,7 @@
+ 	"bootfile=fitImage\0" \
+ 	"consdev=ttyS0\0" \
+ 	"fdtextract=imxtract ${kernel_addr_r} " \
+-		"fdt@${fdt_file} ${fdt_addr_r}\0" \
++		"fdt-${fdt_file} ${fdt_addr_r}\0" \
+ 	"fdtselect=if test ! -e aries_m100pfsevp-sdcard.dtb; then " \
+ 		"if selsd; then " \
+ 		"setenv fdt_file aries_m100pfsevp-sdcard.dtb; else " \
+-- 
+2.17.1
+

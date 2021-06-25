@@ -28,6 +28,7 @@ SRC_URI_append_m100pfsevp = " \
 	    file://0004-dts-Add-device-tree-for-Microchip-Icicle-Kit.patch \
 	    file://0005-riscv-Add-Microchip-MPFS-Icicle-Kit-support.patch \
 	    file://0006-riscv-Add-Aries-M100PFSEVP-PolarFire-SoC-FPGA-Platfo.patch \
+	    file://0007-adjust-for-new-fdt-name.patch \
            "
 
 # Overwrite this for your server

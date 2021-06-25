@@ -1,9 +1,13 @@
 #!/bin/bash
 
-DIR="build"
-MACHINE="icicle-kit-es"
+#DIR="build"
+#MACHINE="icicle-kit-es"
+MACHINE="m100pfsevp"
+DIR=${MACHINE}
 CONFFILE="conf/auto.conf"
 BITBAKEIMAGE="mpfs-dev-cli"
+
+SRC_PREFIX="/workdir/3rd-party/aries/sources"
 
 # clean up the output dir
 #echo "Cleaning build dir"
@@ -28,7 +32,8 @@ fi
 # bootstrap OE
 echo "Init OE"
 export BASH_SOURCE="openembedded-core/oe-init-build-env"
-. ./openembedded-core/oe-init-build-env $DIR
+#. ./openembedded-core/oe-init-build-env $DIR
+source ${SRC_PREFIX}/openembedded-core/oe-init-build-env $DIR
 
 # Symlink the cache
 #echo "Setup symlink for sstate"
@@ -36,14 +41,14 @@ export BASH_SOURCE="openembedded-core/oe-init-build-env"
 
 # add the missing layers
 echo "Adding layers"
-bitbake-layers add-layer ../meta-openembedded/meta-oe
-bitbake-layers add-layer ../meta-openembedded/meta-python
-bitbake-layers add-layer ../meta-openembedded/meta-multimedia
-bitbake-layers add-layer ../meta-openembedded/meta-networking
-bitbake-layers add-layer ../meta-riscv
-bitbake-layers add-layer ../meta-polarfire-soc-yocto-bsp
+bitbake-layers add-layer ${SRC_PREFIX}/meta-openembedded/meta-oe
+bitbake-layers add-layer ${SRC_PREFIX}/meta-openembedded/meta-python
+bitbake-layers add-layer ${SRC_PREFIX}/meta-openembedded/meta-multimedia
+bitbake-layers add-layer ${SRC_PREFIX}/meta-openembedded/meta-networking
+bitbake-layers add-layer ${SRC_PREFIX}/meta-riscv
+bitbake-layers add-layer ${SRC_PREFIX}/meta-polarfire-soc-yocto-bsp
 
-
+bitbake-layers show-layers
 
 # fix the configuration
 echo "Creating auto.conf"
